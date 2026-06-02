@@ -9,6 +9,3 @@ build/
 *.iml
 .DS_Store
 local.properties
-
-# Firebase config — add your own google-services.json (see README)
-google-services.json

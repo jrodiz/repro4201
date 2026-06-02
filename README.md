@@ -15,11 +15,10 @@ ANR, `FirebaseCrashlytics.didCrashOnPreviousExecution()` returns `true` on the n
    ```
    (crashlytics 20.0.7 requires the unreleased sessions 3.0.7; both must be in `~/.m2`.)
 
-2. **Create the Firebase Android app** in your project with package name **`com.example.repro4201`**
-   (no SHA-1 needed for Crashlytics). Download `google-services.json` and put it at:
-   ```
-   repro4201/app/google-services.json
-   ```
+2. **Firebase config is already bundled.** `app/google-services.json` ships with this repo (package
+   name `com.example.repro4201`), so it builds and reports out of the box. To point it at your own
+   Firebase project instead, register an Android app with package name **`com.example.repro4201`**
+   (no SHA-1 needed for Crashlytics) and replace `app/google-services.json`.
 
 3. **Device/emulator on API 30+** (ApplicationExitInfo requires Android R). `adb devices` must list one.
 
