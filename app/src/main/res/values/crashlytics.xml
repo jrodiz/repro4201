@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This repro doesn't apply the firebase-crashlytics Gradle plugin, so no mapping/build ID
+         is injected. Tell Crashlytics not to require one (otherwise init throws at startup). -->
+    <bool name="com.crashlytics.RequireBuildId">false</bool>
+</resources>

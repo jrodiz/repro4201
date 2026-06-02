@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.repro4201'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.example.repro4201'
+        // ApplicationExitInfo (used for ANR detection) requires API 30 (Android R).
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        debug {
+            // Keep ANR detection deterministic: no minification, debuggable.
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    // Built from branch feature/jrc--Issue4201-2.API.to.check.previous.ANR and published to
+    // mavenLocal. Pulls firebase-sessions:3.0.7 (also published locally) transitively.
+    implementation 'com.google.firebase:firebase-crashlytics:20.0.7'
+}

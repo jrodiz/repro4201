@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        // mavenLocal first so the locally-published firebase-crashlytics:20.0.7 and
+        // firebase-sessions:3.0.7 (built from this branch) win over Google Maven.
+        mavenLocal()
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "repro4201"
+include ":app"
